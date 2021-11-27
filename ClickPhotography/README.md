@@ -1,4 +1,4 @@
-# PhotoAlbum
+# Click Photography
 
 This is a photography website that showcases my captured moments and my designs.
 <br/>
