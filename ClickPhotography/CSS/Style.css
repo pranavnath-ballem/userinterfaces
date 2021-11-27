@@ -1,0 +1,521 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+:root {
+    --navHeight: 70px;
+    --sage: #D2CCA1;
+    --paleSpringBud: #DEDABA;
+    --goldCrayola: #E5C687;
+    --richBlackForeground: #0F1A20;
+    --white: #f8f8f8;
+    --black: #222;
+    --msuGreen: #2D4739;
+    --gray: #eee;
+    --lightfill: invert(78%) sepia(62%) saturate(253%) hue-rotate(353deg) brightness(94%) contrast(90%);
+    --darkfill: invert(22%) sepia(17%) saturate(869%) hue-rotate(95deg) brightness(93%) contrast(86%);
+}
+
+.light-theme {
+    --themeDropDownBg: var(--goldCrayola);
+    --themeIconBorderColor: var(--sage);
+    --navBg: var(--sage);
+    --navLinkHoverBg: var(--msuGreen);
+    --mainBg: var(--goldCrayola);
+    --fontColor: var(--black);
+    --fill: var(--lightfill);
+}
+
+.dark-theme {
+    --themeDropDownBg: var(--msuGreen);
+    --themeIconBorderColor: var(--richBlackForeground);
+    --navBg: var(--richBlackForeground);
+    --navLinkHoverBg: var(--paleSpringBud);
+    --mainBg: var(--msuGreen);
+    --fontColor: var(--white);
+    --fill: var(--darkfill);
+}
+
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--fontColor);
+}
+
+body {
+    font-family: 'poppins',sans-serif;
+    background-color: var(--mainBg);
+}
+
+/* Common */
+
+.container-fluid .row {
+    margin: 0 auto;
+    width: 90%;
+    padding: 0;
+}
+
+/* Home */
+
+/* Navbar */
+
+.navbar {
+    min-height: 64px;
+}
+
+#brand-logo {
+    width: 50px;
+    height: 50px;
+    fill: var(--fontColor);
+}
+
+#theme {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    height: var(--navHeight);
+    background-color: var(--navBg);
+}
+
+.navbar a {
+    color: var(--fontColor);
+}
+
+.navbar .nav-item a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--navLinkHoverBg);
+    transition: 0.3s width;
+}
+
+.navbar .nav-item a:hover::after {
+    width: 100%;
+    transition: 0.3s width;
+}
+
+.navbar .nav-item .active::after {
+    content: '';
+    display: block;
+    width: auto;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--navLinkHoverBg);
+}
+
+.mydropdown{
+    background: var(--navBg);
+    border-radius: 20px;
+}
+
+/* Carousel */
+
+/* .carousel-inner {
+    position: relative;
+    width: 100%;
+    max-height: 700px;
+    margin-top: 70px;
+    transition: transform 2s ease, opacity .5s ease-out
+} */
+
+#myCarousel {
+    margin-top: 70px;
+    width: 100%;
+    height: 500px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* .carousel-item .carousel-caption {
+    position: absolute;
+    top: 35%;
+}
+
+.mycaption{
+    background: rgba(171, 195, 196, 0.37);
+    width: 70%;
+    margin: 0 auto;
+    height: 120px;
+    border-radius: 20px;
+} */
+
+.carousel-control-prev-icon:hover {
+    cursor: pointer;
+}
+
+.carousel-control-next-icon:hover {
+    cursor: pointer;
+}
+
+
+/* Quote */
+
+.container-fluid .row blockquote {
+    width: 100%;
+    text-align: center;
+    background: rgba(128, 128, 128, 0.8);
+    margin: 0px 0px;
+    padding: 50px 0;
+}
+
+.container-fluid .row blockquote p, .container-fluid .row blockquote cite {
+    color: white;
+    padding: 10px;
+}
+
+.container-fluid .row .blockquote-footer {
+    color: var(--fontColor);
+}
+
+/* Info */
+
+.container-fluid .row .info {
+    background: var(--black);
+    /* width: 100%; */
+    /* height: auto; */
+    /* display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center; */
+}
+
+.container-fluid .row .info i {
+    font-size: 50px;
+    filter: var(--fill);
+    display: flex;
+    justify-content: center;
+    transition: transform 1s;
+}
+
+.container-fluid .row .info i:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+}
+
+.container-fluid .row .info-header, .container-fluid .row .info-para {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    height: 50px;
+    overflow-wrap: break-word;
+}
+
+/* .container-fluid .row .info .info-cup::before {
+    display: block;
+    content: 'Coffee';
+    color: white;
+    margin: 10px 0px;
+    font-size: 20px;
+    text-align: center;
+    height:100px;
+}
+
+.container-fluid .row .info .info-cup::after {
+    display: block;
+    content: '200 cups';
+    color: white;
+    margin: 10px 0px;
+    text-align: center;
+    height:100px;
+}
+
+.container-fluid .row .info .info-watch::before {
+    display: block;
+    content: 'Work Hours';
+    color: white;
+    margin: 10px 0px;
+    font-size: 20px;
+    text-align: center;
+    height:100px;
+}
+
+.container-fluid .row .info .info-watch::after {
+    display: block;
+    content: '1200+ hours';
+    color: white;
+    margin: 10px 0px;
+    text-align: center;
+    height:100px;
+}
+
+.container-fluid .row .info .info-award::before {
+    display: block;
+    content: 'Awards';
+    color: white;
+    margin: 10px 0px;
+    font-size: 20px;
+    text-align: center;
+    height:100px;
+}
+
+.container-fluid .row .info .info-award::after {
+    display: block;
+    content: '3';
+    color: white;
+    margin: 10px 0px;
+    text-align: center;
+    height:100px;
+}
+
+.container-fluid .row .info .info-workexp::before {
+    display: block;
+    content: 'Work Experience';
+    color: white;
+    margin: 10px 0px;
+    font-size: 20px;
+    text-align: center;
+    height:100px;
+}
+
+.container-fluid .row .info .info-workexp::after {
+    display: block;
+    content: '2+ years';
+    color: white;
+    margin: 10px 0px;
+    text-align: center;
+    height:100px;
+} */
+
+/* Photography Types */
+
+.container-fluid .row .card-info {
+    padding: 0;
+}
+
+.container-fluid .row .card {
+    padding: 10px;
+    background: rgba(185, 185, 185, 0.7);
+}
+
+.container-fluid .row .card-info:nth-child(2) {
+    margin: 0 auto;
+}
+
+.container-fluid .row .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.container-fluid .row .card .card-body .card-title {
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.container-fluid .row .card .card-body .card-text {
+    font-size: 15px;
+    text-align: justify;
+    /* height: auto; */
+    height: 200px;
+    overflow: scroll;
+}
+
+.container-fluid .row .card .card-body .card-text::-webkit-scrollbar {
+    display: none;
+}
+
+/* Footer */
+
+.container-fluid-footer {
+    padding: 0;
+}
+
+.container-fluid-footer .row {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+}
+
+.container-fluid-footer .row .page-footer {
+    width: 100%;
+    height: 64px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--navBg);
+}
+
+.container-fluid-footer .row .footer-copyright, .footer-copyright a {
+    color: var(--fontColor);
+}
+
+/* Portfolio */
+
+.container-fluid-imggal .row {
+    position: relative;
+    margin-top: 70px;
+}
+
+.container-fluid-imggal .row img:hover {
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: 0.5s filter;
+}
+
+/* About */
+
+.container-fluid-about {
+    padding: 0;
+}
+
+.container-fluid-about .row {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+}
+
+.container-fluid-about .row #img-about {
+    margin-top: 70px;
+    display: block;
+}
+
+.container-fluid-about .row .about {
+    position: absolute;
+    background: var(--mainBg);
+    color: var(--fontColor);
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+    left: 65%;
+    top: 30%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Contact */
+
+.container-fluid-cont .row {
+    margin-top: 80px;
+}
+
+.container-fluid-cont .row .uform {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0 auto;
+    background: rgba(209, 209, 209, 0.7);
+    margin-bottom: 10px;
+}
+
+.container-fluid .row .socials {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.container-fluid .row .socials a {
+    color: var(--fontColor);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.container-fluid .row .socials i {
+    color: var(--fontColor);
+    font-style: normal;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width:992px){
+    /* .carousel-item .carousel-caption {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    } */
+    #brand-logo {
+        width: 40px;
+        height: 40px;
+        fill: var(--fontColor);
+    }
+    .container-fluid .row .card-info .card-2 {
+        margin: 0 10px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    #brand-logo {
+        width: 40px;
+        height: 40px;
+        fill: var(--fontColor);
+    }
+    /* .carousel-item .carousel-caption {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    } */
+    .mycaption{
+        background: rgba(171, 195, 196, 0.37);
+        width: 70%;
+        margin: 0 auto;
+        height: 120px;
+        border-radius: 20px;
+    }
+    .container-fluid .row .card-info .card-1, .container-fluid .row .card-info .card-3 {
+        margin-right: 5px;
+    }
+    .container-fluid .row .card-info .card-2 {
+        margin-left: 5px;
+    }
+    .container-fluid .row .card-info .card-3 {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width:576px) {
+    #brand-logo {
+        width: 40px;
+        height: 40px;
+        fill: var(--fontColor);
+    }
+    /* .carousel-item .carousel-caption {
+        position: absolute;
+        top: 55%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    } */
+    .mycaption{
+        background: rgba(171, 195, 196, 0.37);
+        width: 70%;
+        margin: 0 auto;
+        height: 120px;
+        border-radius: 20px;
+    }
+    .container-fluid .row .card-info .card-1, .container-fluid .row .card-info .card-2, .container-fluid .row .card-info .card-3{
+        margin-top: 10px;
+    }
+    .container-fluid-about .row .about {
+        position: absolute;
+        width: 30%;
+        height: 300px;
+        margin: 0 auto;
+        left: 65%;
+        top: 20%;
+        overflow-y: scroll;
+    }
+    .container-fluid-about .row .about::-webkit-scrollbar {
+        display: none;
+    }
+}
